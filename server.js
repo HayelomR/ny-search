@@ -70,7 +70,7 @@ app.post("/api/saved", function(req, res) {
   Times.create({
    title: req.body.title,
    date: Date.now(),
-   url: req.body.url
+   url: req.body.web_url
  }, function(err) {
   if (err) {
     console.log(err);
@@ -82,14 +82,14 @@ app.post("/api/saved", function(req, res) {
 });
 
 // Route to delete saved article.
-app.delete("/api/saved/:id", function(req, res) {
-  Times.findByIdAndRemove(req.params.id, function (err, response) {
-    if(err){
-      res.send(err);
-    }
-    res.send(response);
-  });
-});
+// app.delete("/api/saved/:id", function(req, res) {
+//   Times.findByIdAndRemove(req.params.id, function (err, response) {
+//     if(err){
+//       res.send(err);
+//     }
+//     res.send(response);
+//   });
+// });
 
 // Listener
 app.listen(PORT, function() {

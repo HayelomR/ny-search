@@ -34,11 +34,12 @@ var Results = React.createClass({
 					</div>
 					<div className="panel-body">
 						<ul>
-							{this.props.results.map((result) => {
+							{this.props.results.map((result,i) => {
 
 								return (
-									<li key={result.headline.main}>
-									 <p><a href={result.url} target="_blank">{result.headline.main}</a></p>
+									<li key={i}>
+									 <div className="show-artile" key={i}><a href={result.web_url} target="_blank">{result.headline.main}</a><br />{result.pub_date}
+									 </div>
 									<button onClick={(e) => this.handleSave(result, e)} style={{ color: 'black'}}>Save</button>
 									</li>
 

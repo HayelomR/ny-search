@@ -2,7 +2,10 @@ var React = require("react");
 var Form = React.createClass({
 
   getInitialState: function() {
-    return {Searchterm: ""};
+    return {Searchterm: "",
+            date:"",
+            url:""
+  };
   }, 
   // Response to user input
   handleChange: function(event) {
