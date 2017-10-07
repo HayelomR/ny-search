@@ -1,4 +1,3 @@
-
 //axios package to make http requests.
 var axios = require("axios");
 var nytAPI = "e0dad0e40b0f4d5f989fcc7eb1de4b97";
@@ -26,10 +25,7 @@ var helper = {
 	saveArticle: function(article) {
 		console.log("Saved the article", article)
 		return axios.post("/api/saved", {
-			title: article.headline.main
-			 
-		
-		
+			title: article.headline.main, url: article.web_url
 		});
 	}
 };

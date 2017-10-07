@@ -1,17 +1,17 @@
 var React = require("react");
 var Form = React.createClass({
-
+// set the inital state that we are looking for
   getInitialState: function() {
-    return {Searchterm: "",
-            date:"",
-            url:""
-  };
+    return {
+              Searchterm: "",
+              date:"",
+              url:""
+        };
   }, 
-  // Response to user input
+  // Response to user input and set them the to the user input
   handleChange: function(event) {
     //prevent the form from getting submitted
     event.preventDefault();
-
     this.setState({ Searchterm: event.target.value });
   },
 

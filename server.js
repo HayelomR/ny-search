@@ -1,4 +1,5 @@
 // Include Server Dependencies
+require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
@@ -24,7 +25,14 @@ app.use(express.static("public"));
 // -------------------------------------------------
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
+var PROD = process.env.NODE_ENV = "production"
+if(PROD){
+console.log("production")
+mongoose.connect(process.env.MONGODB_URI);
+}
+
 mongoose.connect("mongodb://localhost:27017/NewYorkTimes");
+
 var db = mongoose.connection;
 
 db.on("error", function(err) {
@@ -67,13 +75,15 @@ app.get('/api/Saved',function(req,res){
 // Route to save articles to mongo db .
 app.post("/api/saved", function(req, res) {
   // Here we will save the articles .
+console.log(req.body);
   Times.create({
    title: req.body.title,
    date: Date.now(),
-   url: req.body.web_url
+   url: req.body.url
  }, function(err) {
   if (err) {
     console.log(err);
+    res.send(JSON.stringify(err));
   }
   else {
     res.send("Saved Article");
@@ -81,17 +91,17 @@ app.post("/api/saved", function(req, res) {
 });
 });
 
-// Route to delete saved article.
-// app.delete("/api/saved/:id", function(req, res) {
-//   Times.findByIdAndRemove(req.params.id, function (err, response) {
-//     if(err){
-//       res.send(err);
-//     }
-//     res.send(response);
-//   });
-// });
+//Route to delete saved article.
+app.delete("/api/saved/:id", function(req, res) {
+  Times.findByIdAndRemove(req.params.id, function (err, response) {
+    if(err){
+      res.send(err);
+    }
+    res.send(response);
+  });
+});
 
-// Listener
+//Listener
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });

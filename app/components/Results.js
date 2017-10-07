@@ -40,7 +40,7 @@ var Results = React.createClass({
 									<li key={i}>
 									 <div className="show-artile" key={i}><a href={result.web_url} target="_blank">{result.headline.main}</a><br />{result.pub_date}
 									 </div>
-									<button onClick={(e) => this.handleSave(result, e)} style={{ color: 'black'}}>Save</button>
+									<button onClick={(e) => this.handleSave(result, e)} style={{ color: 'blue',margin:"10"}}>Save</button>
 									</li>
 
 									)

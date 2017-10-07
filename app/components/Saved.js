@@ -12,6 +12,14 @@ var Saved = React.createClass({
 		};
 	},
 
+  // deleteArticle(articleID, index) {
+  //   console.log("This is the id for the article we want to delete: " + articleID);
+  //   helpers.deleteArticle(articleID).then(() => {
+  //     this.setState((prevState) => ({
+  //       saved: [...prevState.saved.slice(0,index), ...prevState.saved.slice(index+1)]
+  //     }));
+  //   });
+  // },
 	componentDidMount: function() {
 		helpers.getSaved().then(function(response) {
 			console.log("Saved articles: " + response);
@@ -22,10 +30,6 @@ var Saved = React.createClass({
 			}
 		}.bind(this));
 	},
-
-	// deleteArticle: function() {
-	// 	console.log("We are in delete function.");
-	// },
 
   	render: function() {
   		return (
@@ -38,9 +42,11 @@ var Saved = React.createClass({
 		      				</div>
 		      				<div className="panel-body" id="saved-section">
 		      					{this.state.savedArticle.map(function(article, i) {
+		      						console.log(article);
 		      						return (
-		      							<p key={i}><a href={article.url} target="_blank">{article.title}</a><br />{article.date}
-									</p>
+		      							<p key={i}><a href={article.url} target="_blank">{article.title}</a><br />{article.date} <br />
+		      							  <button className="btn btn-primary" data-article-id={article._id} onClick={self.handleClick}style={{ color: 'white',margin:10}}>Delete</button>
+											</p>
 		      						);
 		      					})}
 		      				</div>
