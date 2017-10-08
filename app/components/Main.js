@@ -13,7 +13,7 @@ var Main = React.createClass({
       <div className="container">
         <div className="jumbotron">
           <h1>New York Times Article Finder</h1>
-          <p>Search The Article from the failing New ork Times Below.</p>
+          <p>Search your favorite article from New ork Times below.</p>
         </div>
 
         <div className="row">

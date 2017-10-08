@@ -6,7 +6,7 @@ var Form = React.createClass({
               Searchterm: "",
               date:"",
               url:""
-        };
+        }
   }, 
   // Response to user input and set them the to the user input
   handleChange: function(event) {
