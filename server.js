@@ -31,7 +31,8 @@ console.log("production")
 mongoose.connect(process.env.MONGODB_URI);
 }
 
-mongoose.connect("mongodb://localhost:27017/NewYorkTimes");
+mongoose.connect("mongodb:mongodb://heroku_x1pfj6cx:euvdsm34idrfmah6gaioj8njnt@ds013495.mlab.com:13495/heroku_x1pfj6cx");
+
 
 var db = mongoose.connection;
 
