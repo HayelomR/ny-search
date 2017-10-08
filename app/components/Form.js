@@ -29,7 +29,7 @@ var Form = React.createClass({
     return (
       <div className="panel panel-primary">
         <div className="panel-heading">
-          <h3 className="panel-title text-center">Search</h3>
+          <h3 className="panel-title text-center">Search Your Favorite Article Below</h3>
         </div>
         <div className="panel-body">
           <form onSubmit={this.handleSubmit}>
@@ -42,7 +42,7 @@ var Form = React.createClass({
                 onChange={this.handleChange}
                 required
               />
-              <button className="btn btn-primary" type="submit">
+              <button style={{display: 'flex', marginLeft: '500px',marginTop:"10px"}} className="btn btn-primary" type="submit">
                         Search
                      </button>
                   </div>

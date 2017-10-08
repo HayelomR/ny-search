@@ -9,17 +9,17 @@ var Saved = React.createClass({
 	getInitialState: function() {
 		return {
 	    	savedArticle: []
-		};
+		}
 	},
 
-  // deleteArticle(articleID, index) {
-  //   console.log("This is the id for the article we want to delete: " + articleID);
-  //   helpers.deleteArticle(articleID).then(() => {
-  //     this.setState((prevState) => ({
-  //       saved: [...prevState.saved.slice(0,index), ...prevState.saved.slice(index+1)]
-  //     }));
-  //   });
-  // },
+  deleteArticle(articleID, index) {
+    console.log("please delte this article " + articleID);
+    helpers.deleteArticle(articleID).then(() => {
+      this.setState((prevState) => ({
+        savedArticle: [...prevState.savedArticle.slice(0,index), ...prevState.savedArticle.slice(index+1)]
+      }));
+    });
+  },
 	componentDidMount: function() {
 		helpers.getSaved().then(function(response) {
 			console.log("Saved articles: " + response);
@@ -38,7 +38,7 @@ var Saved = React.createClass({
 		  			<div className="col-sm-12">
 		    			<div className="panel panel-primary">
 		      				<div className="panel-heading">
-		        				<h3 className="panel-title">Saved Articles</h3>
+		        				<h3 style={{display: 'flex', justifyContent: 'center'}} className="panel-title">Saved Articles</h3>
 		      				</div>
 		      				<div className="panel-body" id="saved-section">
 		      					{this.state.savedArticle.map(function(article, i) {

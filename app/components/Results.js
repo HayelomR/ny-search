@@ -30,7 +30,7 @@ var Results = React.createClass({
 			return (
 				<div className="panel panel-primary">
 					<div className="panel-heading">
-						<h3 className="panel-title">Results</h3>
+						<h3 style={{display: 'flex', justifyContent: 'center'}} className="panel-title">Results</h3>
 					</div>
 					<div className="panel-body">
 						<ul>
@@ -40,7 +40,7 @@ var Results = React.createClass({
 									<li key={i}>
 									 <div className="show-artile" key={i}><a href={result.web_url} target="_blank">{result.headline.main}</a><br />{result.pub_date}
 									 </div>
-									<button onClick={(e) => this.handleSave(result, e)} style={{ color: 'blue',margin:"10"}}>Save</button>
+									<button onClick={(e) => this.handleSave(result, e)} style={{ display: 'flex', justifyContent: 'center',color: 'blue',margin:"10"}}>Save</button>
 									</li>
 
 									)
@@ -54,7 +54,7 @@ var Results = React.createClass({
 			return (
 				<div className="panel panel-primary">
 					<div className="panel-heading">
-						<h2 className="panel-title">Results</h2>
+						<h2 style={{display: 'flex', justifyContent: 'center'}}className="panel-title">Results</h2>
 					</div>
 					<div className="panel-body">
 

@@ -47,7 +47,7 @@ db.once("open", function() {
 // // get the saved articles
 app.get("/api/saved", function(req, res) {
 //get some articles 
-Times.find({}).limit(15).exec(function(err, doc) {
+Times.find({}).exec(function(err, doc) {
   if (err) {
     console.log(err);
   }
@@ -80,7 +80,7 @@ console.log(req.body);
   Times.create({
    title: req.body.title,
    date: Date.now(),
-   url: req.body.url
+   url: req.body.web_url
  }, function(err) {
   if (err) {
     console.log(err);
@@ -93,13 +93,12 @@ console.log(req.body);
 });
 
 //Route to delete saved article.
-app.delete("/api/saved/:id", function(req, res) {
-  Times.findByIdAndRemove(req.params.id, function (err, response) {
-    if(err){
-      res.send(err);
-    }
-    res.send(response);
+app.delete('/api/saved/:id', function(req, res){
+  Times.find({'_id': req.params.id}).remove()
+    .exec(function(err, doc) {
+      res.send(doc);
   });
+
 });
 
 //Listener
