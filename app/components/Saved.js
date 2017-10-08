@@ -45,7 +45,7 @@ var Saved = React.createClass({
 		      						console.log(article);
 		      						return (
 		      							<p key={i}><a href={article.url} target="_blank">{article.title}</a><br />{article.date} <br />
-		      							  <button className="btn btn-primary" data-article-id={article._id} onClick={self.handleClick}style={{ color: 'white',margin:10}}>Delete</button>
+		      							  <button className="btn btn-primary" data-article-id={article._id} onClick={self.handleClick}style={{marginLeft:"200", color: 'white',margin:10}}>Delete</button>
 											</p>
 		      						);
 		      					})}
