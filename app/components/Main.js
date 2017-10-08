@@ -12,7 +12,7 @@ var Main = React.createClass({
     return (
       <div className="container">
         <div className="jumbotron">
-          <h1>New York Times Article Finder</h1>
+          <h1 style={{display: 'flex', justifyContent: 'center'}}>New York Times Article Finder</h1>
           <p style={{display: 'flex', justifyContent: 'center'}}>Search your favorite article from New ork Times below.</p>
         </div>
 
