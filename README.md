@@ -1,4 +1,6 @@
+
 This is a new york times app used to scrape your favorite article.
+this app can be found on the following website for full access. https://hayelomny.herokuapp.com/
 
                             How to use the app 
 
